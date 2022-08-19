@@ -40,9 +40,9 @@ namespace Exam1908
             Member sm3 = new Member() { Name = "Gilberto Gil", BaseFee = 200m, JoinDate = new DateTime(2016, 7, 23), TypeOfSubscription = SubscriptionType.Annual };
 
 
-            Member.MonthlyMember mm1 = new Member.MonthlyMember() { Name = "Jhoony Hooker", BaseFee = 100m, JoinDate = new DateTime(2019, 7, 10), TypeOfSubscription = SubscriptionType.Monthly };
-            Member.MonthlyMember mm2 = new Member.MonthlyMember() { Name = "Marisa Monte", BaseFee = 100m, JoinDate = new DateTime(2015, 7, 10), TypeOfSubscription = SubscriptionType.Monthly };
-            Member.MonthlyMember mm3 = new Member.MonthlyMember() { Name = "Marina Senna", BaseFee = 100m, JoinDate = new DateTime(2018, 7, 10), TypeOfSubscription = SubscriptionType.Monthly };
+            Member.MonthlyMember mm1 = new Member.MonthlyMember() { Name = "Jhoony Hooker", BaseFee = 200m, JoinDate = new DateTime(2019, 7, 10), TypeOfSubscription = SubscriptionType.Monthly };
+            Member.MonthlyMember mm2 = new Member.MonthlyMember() { Name = "Marisa Monte", BaseFee = 200m, JoinDate = new DateTime(2015, 7, 10), TypeOfSubscription = SubscriptionType.Monthly };
+            Member.MonthlyMember mm3 = new Member.MonthlyMember() { Name = "Marina Senna", BaseFee = 200m, JoinDate = new DateTime(2018, 7, 10), TypeOfSubscription = SubscriptionType.Monthly };
             
 
             //adding members to the list

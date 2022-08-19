@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Exam1908
 {
+    //Rudgery Lopes S0021438 
+    //Date: 19/08/2022
 
     //creating public in the member class to be used enum to be used
     public enum SubscriptionType { Monthly, Annual }
@@ -91,7 +93,7 @@ namespace Exam1908
             TypeOfSubscription = paymentType;
         }
 
-        public Member(string name, DateTime joinDate) : this(name, joinDate, 750, SubscriptionType.Annual)
+        public Member(string name, DateTime joinDate) : this(name, joinDate, 200, SubscriptionType.Annual)
         {
 
         }
@@ -106,24 +108,25 @@ namespace Exam1908
         {
             //taking from base and doing maths
             public override decimal BaseFee { get => base.BaseFee * 0.1m / 12; }
+            
 
             //to return extra content
             public override string DisplayDetails()
             {
-                return base.DisplayDetails() + "\nMonthly Fee";
+                return base.DisplayDetails() + "\nMonthly Member";
 
             }
 
 
         }
-
+        //inhertiance of annualMember from main class member
         public class AnnualMember : Member
         {
             public override decimal BaseFee { get => base.BaseFee = 200m; }
 
             public override string DisplayDetails()
             {
-                return base.DisplayDetails() + "\nAnnual Fee";
+                return base.DisplayDetails() + "\nAnnual Member";
 
             }
         }
