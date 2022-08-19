@@ -21,38 +21,38 @@ namespace Exam1908
 
         public DateTime JoinDate { get; set; }
 
-        //public DateTime RenewalDate
-        //{
-        //    //get
-        //    //{
-        //    //    int year = DateTime.Now.Year;
-        //    //    //if renewal date has passed for this year
-        //    //    if (DateTime.Now.DayOfYear > JoinDate.DayOfYear)
+        public DateTime RenewalDate
+        {
+            get
+            {
+                int year = DateTime.Now.Year;
+                //if renewal date has passed for this year
+                if (DateTime.Now.DayOfYear > JoinDate.DayOfYear)
 
-        //    //        //set renewal year to next year
-        //    //        year++;
+                    //set renewal year to next year
+                    year++;
 
-        //  // return new DateTime(year, JoinDate.Month, JoinDate.Day);
+                return new DateTime(year, JoinDate.Month, JoinDate.Day);
 
 
-        //    //}
-        //}
+            }
+        }
 
         public SubscriptionType TypeOfSubscription { get; set; }
 
-        //public decimal CalculateFee()
-        //{
-        //    switch (TypeOfSubscription)
-        //    {
-        //        case SubscriptionType.Biannual:
-        //            return 0.5m;
-        //        case SubscriptionType.Monthly:
-        //            return  12;
+        public decimal CalculateFee()
+        {
+            switch (TypeOfSubscription)
+            {
+                case SubscriptionType.Biannual:
+                    return 0.5m;
+                case SubscriptionType.Monthly:
+                    return 12;
 
-        //        default:
-        //            return 0m;
-        //    }
-        //}
+                default:
+                    return 0m;
+            }
+        }
 
         public override string ToString()
         {
@@ -77,7 +77,18 @@ namespace Exam1908
 
         }
 
+        public Member(string name, DateTime joinDate, decimal fee, SubscriptionType paymentType)
+        {
+            Name = name;
+            JoinDate = joinDate;
+            BaseFee = fee;
+            TypeOfSubscription = paymentType;
+        }
 
+        public Member(string name, DateTime joinDate) : this(name, joinDate, 750, SubscriptionType.Annual)
+        {
+
+        }
 
 
 
