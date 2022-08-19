@@ -37,7 +37,7 @@ namespace Exam1908
 
             //creating the objects
              Member sm1 = new Member() { Name = "Caetano Veloso", BaseFee = 200m, JoinDate = new DateTime(2019, 8, 15),TypeOfSubscription = SubscriptionType.Annual  };
-             Member sm2 = new Member() { Name = "Gal Costa", BaseFee = 200m, JoinDate = new DateTime(2017, 8, 20),TypeOfSubscription = SubscriptionType.Annual  };
+             Member sm2 = new Member() { Name = "Gal Costa", BaseFee = 350m, JoinDate = new DateTime(2017, 8, 20),TypeOfSubscription = SubscriptionType.Annual  };
             Member sm3 = new Member() { Name = "Gilberto Gil", BaseFee = 200m, JoinDate = new DateTime(2016, 7, 23), TypeOfSubscription = SubscriptionType.Annual };
 
             //creating monthly members and its properties
