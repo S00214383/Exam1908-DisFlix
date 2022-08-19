@@ -13,9 +13,10 @@ namespace Exam1908
     public enum SubscriptionType { Monthly, Annual }
 
 
+    //creating public class to declare methods, constructors..
     public  class Member
     {
-
+        #region properties
         //properties
 
         private decimal fee;
@@ -37,7 +38,7 @@ namespace Exam1908
 
                     //set renewal year to next year
                     year++;
-
+                //setting then new date based on the date they had joined
                 return new DateTime(year, JoinDate.Month, JoinDate.Day);
 
 
@@ -45,14 +46,15 @@ namespace Exam1908
         }
 
         public SubscriptionType TypeOfSubscription { get; set; }
-
+        #endregion properties
         public decimal CalculateFee()
         {
             switch (TypeOfSubscription)
             {
-                //calculating extras charges
+                //calculating extras charges for motnhly member
                 case SubscriptionType.Monthly:
                     return BaseFee * 0.1m / 12;
+                    //annual member fee keeps the same
                 case SubscriptionType.Annual:
                     return BaseFee ;
 
@@ -66,7 +68,7 @@ namespace Exam1908
             return Name;
         }
 
-        //return string type
+        //return string type - displays in the textblock details from the member selected in the listbox
         public virtual string DisplayDetails()
         {
             return $"{Name}\n" +

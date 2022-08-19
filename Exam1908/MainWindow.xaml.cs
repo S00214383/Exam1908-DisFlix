@@ -32,6 +32,7 @@ namespace Exam1908
 
         private List<Member> GetMembers()
         {
+            //setting a list for all members monthly and annual 
             List<Member> members = new List<Member>();
 
             //creating the objects
@@ -39,7 +40,7 @@ namespace Exam1908
              Member sm2 = new Member() { Name = "Gal Costa", BaseFee = 200m, JoinDate = new DateTime(2017, 8, 20),TypeOfSubscription = SubscriptionType.Annual  };
             Member sm3 = new Member() { Name = "Gilberto Gil", BaseFee = 200m, JoinDate = new DateTime(2016, 7, 23), TypeOfSubscription = SubscriptionType.Annual };
 
-
+            //creating monthly members and its properties
             Member.MonthlyMember mm1 = new Member.MonthlyMember() { Name = "Jhoony Hooker", BaseFee = 200m, JoinDate = new DateTime(2019, 7, 10), TypeOfSubscription = SubscriptionType.Monthly };
             Member.MonthlyMember mm2 = new Member.MonthlyMember() { Name = "Marisa Monte", BaseFee = 200m, JoinDate = new DateTime(2015, 7, 10), TypeOfSubscription = SubscriptionType.Monthly };
             Member.MonthlyMember mm3 = new Member.MonthlyMember() { Name = "Marina Senna", BaseFee = 200m, JoinDate = new DateTime(2018, 7, 10), TypeOfSubscription = SubscriptionType.Monthly };
@@ -50,6 +51,7 @@ namespace Exam1908
             members.Add(sm2);
             members.Add(sm3);
 
+            //adding monthly members to the list
             members.Add(mm1);
             members.Add(mm2);
             members.Add(mm3);
@@ -80,8 +82,10 @@ namespace Exam1908
 
         private void lbxMembers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //colletion
             Member selectedMember = lbxMembers.SelectedItem as Member;
 
+            //statment to display details on the textblock if member is selected
             if (selectedMember != null)
             {
                 tblkDetails.Text = selectedMember.DisplayDetails();
@@ -93,18 +97,18 @@ namespace Exam1908
         private void rb_Checked(object sender, RoutedEventArgs e)
         {
             lbxMembers.ItemsSource = null;
-
+            //displays all members if all radio button selected
             if (rbAll.IsChecked.Value == true)
             {
                 lbxMembers.ItemsSource = allMembers;
             }
-
+            //check annual members
             else if (rbAnnual.IsChecked.Value == true)
             {
                 lbxMembers.ItemsSource = FilterMembers("Member");
             }
 
-
+            //check for monthly members
             else if (rbMonthly.IsChecked.Value == true)
             {
                 lbxMembers.ItemsSource = FilterMembers("MonthlyMember");
@@ -112,18 +116,21 @@ namespace Exam1908
           
 
         }
+
         //method to filter member
 
         private List<Member> FilterMembers(string MemberType)
         {
+            //creating a filtered member list 
             List<Member> filteredMembers = new List<Member>();
 
             foreach (Member member in allMembers)
             {
+                //type gets the selected text in this case : name
                 if (member.GetType().Name == MemberType)
                     filteredMembers.Add(member);
             }
-
+            //new list created to radio buttons
             return filteredMembers;
         }
     }
