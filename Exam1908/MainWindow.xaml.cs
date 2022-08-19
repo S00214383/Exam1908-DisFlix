@@ -43,12 +43,7 @@ namespace Exam1908
             Member.MonthlyMember mm1 = new Member.MonthlyMember() { Name = "Jhoony Hooker", BaseFee = 100m, JoinDate = new DateTime(2019, 7, 10), TypeOfSubscription = SubscriptionType.Monthly };
             Member.MonthlyMember mm2 = new Member.MonthlyMember() { Name = "Marisa Monte", BaseFee = 100m, JoinDate = new DateTime(2015, 7, 10), TypeOfSubscription = SubscriptionType.Monthly };
             Member.MonthlyMember mm3 = new Member.MonthlyMember() { Name = "Marina Senna", BaseFee = 100m, JoinDate = new DateTime(2018, 7, 10), TypeOfSubscription = SubscriptionType.Monthly };
-            //MonthlyMember mm1 = new MonthlyMember() { }
-
-
-            //SeniorMember sm1 = new SeniorMember() { Name = "Cian Daly", Fee = 1000, JoinDate = new DateTime(2015, 4, 24), PaymentType = PaymentSchedule.Annual };
-            //SeniorMember sm2 = new SeniorMember() { Name = "Bobby Quinn", Fee = 1000, JoinDate = new DateTime(2014, 12, 1), PaymentType = PaymentSchedule.Biannual };
-            //SeniorMember sm3 = new SeniorMember() { Name = "Eve Gallagher", Fee = 1000, JoinDate = new DateTime(2013, 6, 1), PaymentType = PaymentSchedule.Monthly };
+            
 
             //adding members to the list
             members.Add(sm1);
@@ -59,9 +54,7 @@ namespace Exam1908
             members.Add(mm2);
             members.Add(mm3);
 
-            //members.Add(sm1);
-            //members.Add(sm2);
-            //members.Add(sm3);
+            
 
             return members;
 
@@ -105,6 +98,33 @@ namespace Exam1908
             {
                 lbxMembers.ItemsSource = allMembers;
             }
+
+            else if (rbAnnual.IsChecked.Value == true)
+            {
+                lbxMembers.ItemsSource = FilterMembers("Member");
+            }
+
+
+            else if (rbMonthly.IsChecked.Value == true)
+            {
+                lbxMembers.ItemsSource = FilterMembers("MonthlyMember");
+            }
+          
+
+        }
+        //method to filter member
+
+        private List<Member> FilterMembers(string MemberType)
+        {
+            List<Member> filteredMembers = new List<Member>();
+
+            foreach (Member member in allMembers)
+            {
+                if (member.GetType().Name == MemberType)
+                    filteredMembers.Add(member);
+            }
+
+            return filteredMembers;
         }
     }
 }

@@ -62,12 +62,12 @@ namespace Exam1908
         //return string type
         public virtual string DisplayDetails()
         {
-            return $"{Name}\n";
-                   //$"Join Date { JoinDate.ToShortDateString()}\n" +
-                   //$"Basic Fee { Fee:C}\n" +
-                   //$"Payment Schedule { PaymentType} - {CalculateFee():C}\n" +
-                   //$"Renewal date { RenewalDate.ToShortDateString()}\n" +
-                   //$"Days to renew {DaysToRenewal}\n";
+            return $"{Name}\n" +
+                   $"Join Date { JoinDate.ToShortDateString()}\n" +
+                   $"Basic Fee { BaseFee:C}\n" +
+                   $"Payment Schedule { TypeOfSubscription } - {CalculateFee():C}\n" +
+                   $"Renewal date { RenewalDate.ToShortDateString()}\n";
+                
 
         }
 
