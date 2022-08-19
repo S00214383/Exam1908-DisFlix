@@ -15,7 +15,7 @@ namespace Exam1908
     {
 
         //properties
-        public  decimal BaseFee = 200m;
+        public virtual decimal BaseFee { get ; set; }
 
         public string Name { get; set; }
 
@@ -87,14 +87,26 @@ namespace Exam1908
         //inherated subclasses
         public class  MonthlyMember : Member
         {
-            //public
+            public override decimal BaseFee { get => base.BaseFee * 0.1m / 12; }
+
+            public override string DisplayDetails()
+            {
+                return base.DisplayDetails() + "\nMonthly Fee";
+
+            }
 
 
         }
 
         public class AnnualMember : Member
         {
+            public override decimal BaseFee { get => base.BaseFee = 200m; }
 
+            public override string DisplayDetails()
+            {
+                return base.DisplayDetails() + "\nAnnual Fee";
+
+            }
         }
     }
 }
