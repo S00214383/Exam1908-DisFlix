@@ -11,7 +11,7 @@ namespace Exam1908
     public enum SubscriptionType { Monthly, Biannual, Annual }
 
 
-    public class Member
+    public abstract class Member
     {
 
         //properties
@@ -71,12 +71,13 @@ namespace Exam1908
 
         }
 
+        #region constructors
         //constructors
         public Member()
         {
 
         }
-
+        
         public Member(string name, DateTime joinDate, decimal fee, SubscriptionType paymentType)
         {
             Name = name;
@@ -90,7 +91,7 @@ namespace Exam1908
 
         }
 
-
+        #endregion constructors
 
 
 
@@ -98,8 +99,10 @@ namespace Exam1908
         //inherated subclasses
         public class  MonthlyMember : Member
         {
+            //taking from base and doing maths
             public override decimal BaseFee { get => base.BaseFee * 0.1m / 12; }
 
+            //to return extra content
             public override string DisplayDetails()
             {
                 return base.DisplayDetails() + "\nMonthly Fee";
