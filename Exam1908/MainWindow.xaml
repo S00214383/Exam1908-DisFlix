@@ -10,7 +10,12 @@
         <Label x:Name="label" Content="DisFlix TV Streaming" HorizontalAlignment="Center" Margin="287,34,241.333,0" VerticalAlignment="Top" Width="265"/>
         <Label x:Name="lbl2" Content="Subscribers" HorizontalAlignment="Left" Margin="203,73,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lbxMembers" HorizontalAlignment="Left" Height="239" Margin="203,99,0,0" VerticalAlignment="Top" Width="178" Loaded="lbxMembers_Loaded" SelectionChanged="lbxMembers_SelectionChanged"/>
-        <TextBlock x:Name="tblkDetails" HorizontalAlignment="Left" Margin="503,99,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="239" Width="200"/>
+        <TextBlock x:Name="tblkDetails" HorizontalAlignment="Left" Margin="503,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="239" Width="200"/>
+        <Label x:Name="lblDetails" Content="Subscribers Details" HorizontalAlignment="Left" Margin="522,77,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rbAll" Content="All" HorizontalAlignment="Left" Margin="91,135,0,0" VerticalAlignment="Top" GroupName="rbGroup" Checked="rb_Checked"/>
+        <RadioButton x:Name="rbMonthly" Content="Monthly" HorizontalAlignment="Left" Margin="91,187,0,0" VerticalAlignment="Top" GroupName="rbGroup" Checked="rb_Checked"/>
+        <RadioButton x:Name="rbAnnual" Content="Annual" HorizontalAlignment="Left" Margin="91,239,0,0" VerticalAlignment="Top" GroupName="rbGroup"/>
+        <Label x:Name="lblFilter" Content="Filter" HorizontalAlignment="Left" Margin="91,99,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

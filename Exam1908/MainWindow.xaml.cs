@@ -94,5 +94,17 @@ namespace Exam1908
                 tblkDetails.Text = selectedMember.DisplayDetails();
             }
         }
+
+
+        //filtering buttons
+        private void rb_Checked(object sender, RoutedEventArgs e)
+        {
+            lbxMembers.ItemsSource = null;
+
+            if (rbAll.IsChecked.Value == true)
+            {
+                lbxMembers.ItemsSource = allMembers;
+            }
+        }
     }
 }
