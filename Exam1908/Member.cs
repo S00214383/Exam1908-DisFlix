@@ -8,14 +8,18 @@ namespace Exam1908
 {
 
     //creating public in the member class to be used enum to be used
-    public enum SubscriptionType { Monthly, Biannual, Annual }
+    public enum SubscriptionType { Monthly, Annual }
 
 
-    public abstract class Member
+    public  class Member
     {
 
         //properties
-        public virtual decimal BaseFee { get ; set; }
+
+        private decimal fee;
+        public virtual decimal BaseFee { get { return fee; } set { fee = 200m; } }
+        
+       // public virtual decimal BaseFee { get; set ; }
 
         public string Name { get; set; }
 
@@ -44,10 +48,11 @@ namespace Exam1908
         {
             switch (TypeOfSubscription)
             {
-                case SubscriptionType.Biannual:
-                    return 0.5m;
+                //calculating extras charges
                 case SubscriptionType.Monthly:
-                    return 12;
+                    return BaseFee * 0.1m / 12;
+                case SubscriptionType.Annual:
+                    return BaseFee ;
 
                 default:
                     return 0m;
